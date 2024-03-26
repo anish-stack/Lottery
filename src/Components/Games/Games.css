@@ -1,0 +1,141 @@
+.games {
+    padding: 1.1rem 1.1rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.hmGame {
+    padding-top: 1.5rem;
+    background-image: url("https://gulfticket.com/assets/img/div-background.png");
+    background-size: auto;
+}
+
+.games-container {
+    width: 100%;
+    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.game {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    border: 1px dotted #000;
+
+}
+
+@font-face {
+    font-family: hidayatullah;
+    src: url('./hidayatullah%20DEMO.ttf');
+}
+
+.game-name {
+    font-size: 3.2rem;
+    font-weight: 700;
+    font-family: hidayatullah;
+}
+
+.pricevalue {
+    padding: 1.2rem;
+}
+
+.pricevalue h2 {
+    padding: 0.3rem;
+    font-weight: 700;
+    font-style: italic;
+    border-radius: 55px;
+    font-size: 2.5rem;
+    background-color: #FFE27B;
+
+}
+
+.draw-date h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+}
+
+.boxes {
+    margin-top: 12px;
+    padding: 0.2rem 0.2rem;
+}
+
+.boxes h3 {
+    color: #fff;
+    position: relative;
+    background-color: #494949;
+    font-weight: 700;
+    padding: 0.4rem 0.6rem;
+}
+
+.selectedNumbers {
+    display: flex;
+    padding-top: 1.1rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.selectedNumber {
+    width: 54px;
+    border-radius: 50%;
+    height: 54px;
+    border: 1px solid orangered;
+}
+
+.divder {
+    width: 100%;
+    border-top: 3px dashed #000;
+    margin: 20px 0;
+}
+
+.number-container {
+    width: 100%;
+    display: grid;
+    padding: 1.2rem;
+    gap: 0.5rem;
+
+    grid-template-columns: repeat(7, 1fr);
+
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    border-radius: 50%;
+cursor: pointer;
+    border: 1px solid orangered;
+    height: 52px;
+
+}
+.number:hover{
+    background-color: #E0B553;
+}
+.selectedNumber{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+@media screen and (max-width:768px) {
+    .games-container {
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .number-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .game {
+        width: 94%;
+       
+    }
+}
