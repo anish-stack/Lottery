@@ -43,7 +43,7 @@ const Otp = () => {
     const otpString = otp.join('');
     console.log(otpString);
     try {
-      const response = await axios.post('http://localhost:5002/api/v1/verify-otp', {
+      const response = await axios.post('https://www.api.jackpotlamp.com/v1/verify-otp', {
         Email: email,
         Otp: otpString
       });

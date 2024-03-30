@@ -40,7 +40,7 @@ const {password,email} = useParams()
     const otpNumber = parseInt(otpString, 10); // Specify base 10 for decimal numbers
     
     try {
-      const response = await axios.post('http://localhost:5002/api/v1/Password-verify', {
+      const response = await axios.post('https://www.api.jackpotlamp.com/api/v1/Password-verify', {
         Email: password,
         Otp: otpNumber,
         newPassword:email

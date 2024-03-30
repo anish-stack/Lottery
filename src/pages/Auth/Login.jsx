@@ -20,7 +20,7 @@ const Login = () => {
 };
 const handleLogin = useCallback(async () => {
   try {
-    const res = await axios.post('http://localhost:5002/api/v1/login', formdata);
+    const res = await axios.post('https://www.api.jackpotlamp.com/api/v1/login', formdata);
     console.log(res.data);
     if (res.data.success === true) {
       Swal.fire({

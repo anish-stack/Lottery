@@ -55,7 +55,7 @@ const Games = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await axios.get('http://localhost:5002/api/v1/games')
+                const response = await axios.get('https://www.api.jackpotlamp.com/api/v1/games')
                 console.log(response.data.data)
                 setGames(response.data.data)
             } catch (error) {

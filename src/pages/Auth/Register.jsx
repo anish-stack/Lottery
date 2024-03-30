@@ -66,7 +66,7 @@ const Register = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:5002/api/v1/Register', formdata);
+      const response = await axios.post('https://www.api.jackpotlamp.com/api/v1/Register', formdata);
       console.log(response.data);
       if (response.data.success === true) {
         Swal.fire({
