@@ -29,7 +29,9 @@
     font-family: hidayatullah;
     src: url('./hidayatullah%20DEMO.ttf');
 }
-
+.font{
+    font-family: hidayatullah;
+}
 .game-name {
     font-size: 3.2rem;
     font-weight: 700;

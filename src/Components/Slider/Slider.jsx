@@ -7,21 +7,22 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Keyboard, Pagination } from 'swiper/modules';
 import './styles.css';
+import img1 from './slide1.jpg'
+import img2 from './slide2.jpg'
+import img3 from './slide3.jpg'
+
+
 const Slider = () => {
     const data = [
         {
-            img:"https://gulfticket.com/cdn//web/home/S6_PRIZEWINNER_D.png"
+            img:img1
         },
         {
-            img:"https://gulfticket.com/cdn//web/home/F5_PRIZEWINNER_D.png"
+            img:img2
 
         },
         {
-            img:"https://gulfticket.com/cdn/web/home/Slider-20.jpg"
-
-        },
-        {
-            img:"https://gulfticket.com/cdn//web/home/S6_PRIZEWINNER_D.png"
+            img:img3
 
         }
     ]

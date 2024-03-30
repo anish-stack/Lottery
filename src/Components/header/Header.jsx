@@ -30,22 +30,22 @@ const Header = () => {
     return (
         <div className='w-full'>
             <header className='w-full flex items-center justify-between px-2 py-4 bg-[#FDF6ED]'>
-                <div className='logo'>
-                    <h3 className='md:text-3xl  italic text-[#ff4500] font-bold'>Daily <span className='text-slate-700'>Games</span></h3>
-                </div>
+                <Link to="/" className='logo'>
+                    <h3 className='md:text-3xl  italic text-[#ff4500] font-bold'>Jackpot <span className='text-slate-700'>Lamp</span></h3>
+                </Link>
                 <div className={`navbar  ${showmenu ? 'show':''}    `}>
                     <nav className='p-1'>
                         <ul className='flex items-center gap-5 justify-center'>
-                            <li className='relative nav-links' onClick={showDropMenu}  ><Link>Buy Now</Link>
+                            <li className='relative nav-links' onClick={showDropMenu}  ><Link>Buy Now ⬇️</Link>
                                 <div className={`${showDrop ? "flex" : "hidden"} drops  rounded-lg `}>
                                     <ul>
-                                        <li className='text-sm nav-linkss'><Link>Fortune 5</Link></li>
+                                        <li className='text-sm nav-linkss'><Link>Fortune 5</Link>  </li>
                                         <li className='text-sm nav-linkss'><Link>Super 6</Link></li>
                                     </ul>
                                 </div>
                             </li>
                             <li onMouseEnter={onHeader} className='nav-links'><Link>How To Play</Link></li>
-                            <li className='draws-drop nav-links relative' onClick={showDropMenus}><Link>Draws</Link>
+                            <li className='draws-drop nav-links relative' onClick={showDropMenus}><Link>Draws ⬇️ </Link>
                                 <div className={`${showDrops ? "flex" : "hidden"} drops rounded-lg `}>
                                     <ul>
                                         <li className='text-sm nav-linkss'><Link>Fortune 5</Link></li>
@@ -61,8 +61,8 @@ const Header = () => {
                 <div className='lefts'>
                     <ul className='flex items-center gap-5 justify-center'>
                         <li className='font-bold hidden md:block text-orange-700'><Link>Translate</Link></li>
-                        <li className='font-bold text-orange-700'><Link>Login</Link></li>
-                        <li><Link className='button-cta'>Create Account</Link></li>
+                        <li className='font-bold text-orange-700'><Link to={'/login'}>Login</Link></li>
+                        <li><Link to="/Register" className='button-cta'>Create Account</Link></li>
                         <li onClick={showMenu}><Link className='text-2xl hidden menus font-extrabold'><CiMenuFries/></Link></li>
 
                     </ul>

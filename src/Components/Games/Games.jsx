@@ -12,23 +12,44 @@ const Games = () => {
             ...prevState,
             [gameId]: Array.isArray(prevState[gameId]) ? prevState[gameId] : Array(5).fill("?")
         }));
-
-        if (selectedNumbersByGame[gameId]?.includes(number)) {
-            // If the number is already selected, do nothing
-            
-            return;
-        }
-
-        const availableIndex = selectedNumbersByGame[gameId]?.findIndex(selectedNumber => selectedNumber === '?');
-        if (availableIndex !== -1) {
-            const newSelectedNumbers = [...selectedNumbersByGame[gameId]];
-            newSelectedNumbers[availableIndex] = number;
+    ``
+        const selectedNumbers = selectedNumbersByGame[gameId] || [];
+    
+        if (selectedNumbers.includes(number)) {
+            // If the number is already selected, remove it on double click
+            const newSelectedNumbers = selectedNumbers.filter(selectedNumber => selectedNumber !== number);
             setSelectedNumbersByGame(prevState => ({
                 ...prevState,
                 [gameId]: newSelectedNumbers
             }));
+    
+            // Remove background color from the clicked number
+            const numberElements = document.querySelectorAll(`.game[data-id="${gameId}"] .number`);
+            numberElements[index].classList.remove('bg-green-400');
+    
+            // Update local storage
+            localStorage.setItem(`${gameId}_selectedNumbers`, JSON.stringify(newSelectedNumbers));
+        } else {
+            // If the number is not selected, add it
+            const availableIndex = selectedNumbers.findIndex(selectedNumber => selectedNumber === '?');
+            if (availableIndex !== -1) {
+                const newSelectedNumbers = [...selectedNumbers];
+                newSelectedNumbers[availableIndex] = number;
+                setSelectedNumbersByGame(prevState => ({
+                    ...prevState,
+                    [gameId]: newSelectedNumbers
+                }));
+    
+                // Add background color to the clicked number
+                const numberElements = document.querySelectorAll(`.game[data-id="${gameId}"] .number`);
+                numberElements[index].classList.add('bg-green-400');
+    
+                // Update local storage
+                localStorage.setItem(`${gameId}_selectedNumbers`, JSON.stringify(newSelectedNumbers));
+            }
         }
     };
+    
 
 
     useEffect(() => {
@@ -51,9 +72,10 @@ const Games = () => {
 
     return (
         <div className='games hmGame '>
-            <div className="games-container">{
-                games.map((game, index) => (
-                    <div key={index} className="game">
+            <div className="games-container">
+                {
+                games.slice(0,3).map((game, index) => (
+                    <div key={index} data-id={game._id} className="game">
                         <div className="game-name"><h2>{game.GameName} </h2></div>
                         <div className="pricevalue">
                             <h2>Rs {game.PricePool}</h2>
@@ -86,117 +108,7 @@ const Games = () => {
                     </div>
                 ))
             }
-                {/* <div className="game">
-                    <div className="game-name"><h2>Fortune 5 </h2></div>
-                    <div className="pricevalue">
-                        <h2>Rs 1 Million</h2>
-                    </div>
-                    <div className="draw-date">
-                        <h3>FRI 29 MAR 2024 08:00 PM(UAE)</h3>
-                    </div>
-                    <div className="timer">
-                        <div className="boxes days">
-                            <h3>03</h3>
-                            <p>Days</p>
-                        </div>
-                        <div className="boxes hours"><h3>13</h3>
-                            <p>Hours</p></div>
-                        <div className="boxes minutes"><h3>3</h3>
-                            <p>Minutes</p></div>
-                        <div className="boxes seconds"><h3>03</h3>
-                            <p>Seconds</p></div>
-                    </div>
-                    <div className="selectedNumbers">
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                    </div>
-                    <div className='divder'></div>
-                    <div className="number-container">
-                        {numbers.map(number => (
-                            <div className="number" key={number}>
-                                {number}
-                            </div>
-                        ))}
-                    </div>
 
-                </div>
-                <div className="game">
-                    <div className="game-name"><h2>Fortune 5 </h2></div>
-                    <div className="pricevalue">
-                        <h2>Rs 1 Million</h2>
-                    </div>
-                    <div className="draw-date">
-                        <h3>FRI 29 MAR 2024 08:00 PM(UAE)</h3>
-                    </div>
-                    <div className="timer">
-                        <div className="boxes days">
-                            <h3>03</h3>
-                            <p>Days</p>
-                        </div>:
-                        <div className="boxes hours"><h3>13</h3>
-                            <p>Hours</p></div>:
-                        <div className="boxes minutes"><h3>3</h3>
-                            <p>Minutes</p></div>:
-                        <div className="boxes seconds"><h3>03</h3>
-                            <p>Seconds</p></div>:
-                    </div>
-                    <div className="selectedNumbers">
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                    </div>
-                    <div className="divder"></div>
-                    <div className="number-container">
-                        {numbers.map(number => (
-                            <div className="number" key={number}>
-                                {number}
-                            </div>
-                        ))}
-                    </div>
-
-                </div>
-                <div className="game">
-                    <div className="game-name"><h2>Fortune 5 </h2></div>
-                    <div className="pricevalue">
-                        <h2>Rs 1 Million</h2>
-                    </div>
-                    <div className="draw-date">
-                        <h3>FRI 29 MAR 2024 08:00 PM(UAE)</h3>
-                    </div>
-                    <div className="timer">
-                        <div className="boxes days">
-                            <h3>03</h3>
-                            <p>Days</p>
-                        </div>:
-                        <div className="boxes hours"><h3>13</h3>
-                            <p>Hours</p></div>:
-                        <div className="boxes minutes"><h3>3</h3>
-                            <p>Minutes</p></div>:
-                        <div className="boxes seconds"><h3>03</h3>
-                            <p>Seconds</p></div>:
-                    </div>
-                    <div className="selectedNumbers">
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                        <div className="selectedNumber"></div>
-                    </div>
-                    <div className="divder"></div>
-                    <div className="number-container">
-                        {numbers.map(number => (
-                            <div className="number" key={number}>
-                                {number}
-                            </div>
-                        ))}
-                    </div>
-
-                </div> */}
             </div>
         </div>
     )

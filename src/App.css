@@ -9,3 +9,12 @@
 html,body{
   overflow-x: hidden;
 }
+input::placeholder {
+  padding-left: 21px;
+ 
+  color: #999; /* Change the color of the placeholder text */
+  font-style: italic; /* Change the font style of the placeholder text */
+}
+.shaode{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
