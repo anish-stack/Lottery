@@ -32,18 +32,29 @@ const Otp = () => {
   };
 
   const handleKeyDown = (e, index) => {
+    console.log('Key pressed:', e.key);
     if (e.key === 'Backspace' && index > 0 && otp[index] === '') {
       e.preventDefault();
-      inputRefs.current[index - 1].focus();
+      setOtp(prevOtp => {
+        const newOtp = [...prevOtp];
+        newOtp[index - 1] = '';
+        return newOtp;
+      });
+      if (index > 0) {
+        inputRefs.current[index - 1].focus();
+      }
     }
   };
+  
+  
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const otpString = otp.join('');
     console.log(otpString);
     try {
-      const response = await axios.post('https://www.api.jackpotlamp.com/v1/verify-otp', {
+      const response = await axios.post('http://localhost:5074/api/v1/verify-otp', {
         Email: email,
         Otp: otpString
       });
@@ -56,6 +67,7 @@ const Otp = () => {
           confirmButtonText: 'Cool'
         });
       }
+      setOtp('')
     } catch (error) {
       console.error('Error:', error);
       Swal.fire({
@@ -69,7 +81,7 @@ const Otp = () => {
 
   const resendOtp = async () => {
     try {
-      const response = await axios.post(`http://localhost:5002/api/v1/resend-otp/${email}`);
+      const response = await axios.post(`http://localhost:5074/api/v1/resend-otp/${email}`);
       console.log(response.data);
       if (response.data.success === true) {
         Swal.fire({

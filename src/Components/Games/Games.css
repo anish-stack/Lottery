@@ -29,9 +29,11 @@
     font-family: hidayatullah;
     src: url('./hidayatullah%20DEMO.ttf');
 }
-.font{
+
+.font {
     font-family: hidayatullah;
 }
+
 .game-name {
     font-size: 3.2rem;
     font-weight: 700;
@@ -99,7 +101,6 @@
 }
 
 .number-container {
-    width: 100%;
     display: grid;
     padding: 1.2rem;
     gap: 0.5rem;
@@ -112,32 +113,94 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
+    width:42px;
     border-radius: 50%;
-cursor: pointer;
+    cursor: pointer;
     border: 1px solid orangered;
-    height: 52px;
+    height:42px;
 
 }
-.number:hover{
+
+.number:hover {
     background-color: #E0B553;
 }
-.selectedNumber{
+
+.selectedNumber {
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
+}
+
+.game-cart{
+    width: 100%;
+    display: flex;
+    padding: 0.4rem 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.likeandshare{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+.likeandshare button{
+font-weight: 700;
+font-size: 1.6rem;
+}
+.counters{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+.btn-counter{
+    background-color: #E0B553;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.cta{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+
+}
+.cta button{
+    padding: 0.2rem 1.5rem;
+    background-color: #E0B553;
+    border-radius: 44px;
+    color: #fff;
+}
+.cta button:nth-child(2){
+    background-color: #e06653;
+ 
+}
+
+.notActive{
+    width: 100%;
+    height: 100%;
+    /* display: none; */
+    color: #fff!important;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://i.ibb.co/YLx1sXY/game-over.jpg');
 }
 @media screen and (max-width:768px) {
     .games-container {
 
         grid-template-columns: repeat(1, 1fr);
     }
+
     .number-container {
         grid-template-columns: repeat(5, 1fr);
     }
+
     .game {
         width: 94%;
-       
+
     }
 }

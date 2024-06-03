@@ -1,0 +1,13 @@
+.cartBg{
+    background-image: url('https://i.ibb.co/Zzs2g21/ldr-bg.webp');
+    background-size: cover;
+    background-position: center;
+}
+.w25{
+    width: 25%!important;
+}
+@media screen and (max-width:768px) {
+    .w25 {
+        width: 61%!important;
+    }
+}

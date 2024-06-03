@@ -6,11 +6,11 @@ import { useLocation, useParams } from 'react-router-dom';
 const ResetPasswordOtp = () => {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const inputRefs = useRef([]);
-const {password,email} = useParams()
-  console.log("password",email)
-  console.log("Email",password)
+  const { password, email } = useParams()
+  console.log("Email", email)
+  console.log("Password", password)
 
-  
+
 
 
   const handleChange = (index, value) => {
@@ -38,12 +38,12 @@ const {password,email} = useParams()
     e.preventDefault();
     const otpString = otp.join('');
     const otpNumber = parseInt(otpString, 10); // Specify base 10 for decimal numbers
-    
+
     try {
-      const response = await axios.post('https://www.api.jackpotlamp.com/api/v1/Password-verify', {
-        Email: password,
+      const response = await axios.post('http://localhost:5074/api/v1/Password-verify', {
+        Email: email,
         Otp: otpNumber,
-        newPassword:email
+        newPassword: password
       });
       console.log(response.data);
       if (response.data.success === true) {
@@ -92,7 +92,7 @@ const {password,email} = useParams()
             Submit-Otp
           </button>
         </div>
-      
+
       </div>
     </div>
   );

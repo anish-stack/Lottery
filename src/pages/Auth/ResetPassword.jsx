@@ -22,7 +22,7 @@
       };
 
       // Send a POST request with only the email data
-      const res = await axios.post('https://www.api.jackpotlamp.com/api/v1/Password-Change-Request', emailData);
+      const res = await axios.post('http://localhost:5074/api/v1/Password-Change-Request', emailData);
       console.log(res.data);
       if (res.data.success === true) {
         // Redirect to the password reset OTP page with email and password parameters

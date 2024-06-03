@@ -11,10 +11,10 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Information</h2>
             <ul className="text-white dark:text-black font-medium">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline">Dail Wins</a>
+                    <a href="/Winners" className=" hover:underline">Daily Wins</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Games</a>
+                    <a href="/Games" className="hover:underline">Games</a>
                 </li>
                 <li className="mb-4">
                     <a href="#" className="hover:underline">Fortune</a>
@@ -26,13 +26,13 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
             <ul className="text-white dark:text-black font-medium">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline">Jackpot-Lamp</a>
+                    <a href="/" className=" hover:underline">Jackpot-Lamp</a>
                 </li>
                 <li className="mb-4">
                     <a href="#" className="hover:underline">About</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Winners</a>
+                    <a href="/Draws" className="hover:underline">Winners</a>
                 </li>
               
             </ul>

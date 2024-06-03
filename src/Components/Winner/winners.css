@@ -1,0 +1,22 @@
+@font-face {
+    font-family: hidayatullah;
+    src: url('./hidayatullah%20DEMO.ttf');
+}
+
+.font {
+    font-family: hidayatullah;
+}
+
+.jackpotFonts {
+    font-size: 5.2rem;
+    font-weight: 700;
+    font-family: hidayatullah;
+}
+
+@media screen and (max-width:768px) {
+    
+.jackpotFonts {
+    font-size: 3.2rem;
+
+}
+}

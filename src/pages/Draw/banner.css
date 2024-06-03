@@ -1,0 +1,57 @@
+.banner {
+    background-image: url('https://i.ibb.co/Zzs2g21/ldr-bg.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.draw-card {
+    width: 100%;
+    border-radius: 14px;
+    padding: 1.1rem 2.2rem;
+    min-height: 500px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #FFE588;
+}
+
+.numbers-win {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.numb {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.matchingPortaions {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 25px;
+}
+
+.matching {
+    display: flex;
+    border-radius: 44px;
+    margin-bottom: 21px;
+    grid-area: 1.2rem;
+    /* margin: 0 12px; */
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem 0.3rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.data{
+    background-color: #fff ;
+    padding: 0.4rem 3rem;
+    text-align: center;
+    border-radius: 44px;
+    font-weight: 700;
+}
