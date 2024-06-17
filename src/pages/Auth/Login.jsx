@@ -32,8 +32,8 @@ const Login = () => {
       }
       const user = res.data.user
       // console.log(user)
-      sessionStorage.setItem('token', res.data.token)
-      sessionStorage.setItem('user', JSON.stringify(user))
+      localStorage.setItem('LampToken', res.data.token)
+      localStorage.setItem('LampUser', JSON.stringify(user))
       window.location.href = "/"
     } catch (error) {
       console.log(error);

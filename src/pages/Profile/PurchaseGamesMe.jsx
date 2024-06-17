@@ -8,8 +8,8 @@ const PurchaseGamesMe = () => {
     const [itemsPerPage] = useState(6); // Number of items to show per page
     const [searchTerm, setSearchTerm] = useState('');
     const [sortCriteria, setSortCriteria] = useState(null); // Sorting criteria: date, AtoZ, ZtoA
-    const userId = JSON.parse(sessionStorage.getItem('user'))._id;
-    const Token = sessionStorage.getItem('token');
+    const userId = JSON.parse(localStorage.getItem('LampUser'))._id;
+    const Token = localStorage.getItem('LampToken');
 
     // Fetch data from API
     const fetchData = async () => {

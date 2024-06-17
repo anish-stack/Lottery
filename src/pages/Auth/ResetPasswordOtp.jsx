@@ -41,9 +41,9 @@ const ResetPasswordOtp = () => {
 
     try {
       const response = await axios.post('http://localhost:5074/api/v1/Password-verify', {
-        Email: email,
+        Email: password,
         Otp: otpNumber,
-        newPassword: password
+        newPassword: email
       });
       console.log(response.data);
       if (response.data.success === true) {

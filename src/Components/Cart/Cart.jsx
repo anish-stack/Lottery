@@ -6,7 +6,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2';
 
 const Cart = () => {
-    const token = sessionStorage.getItem('token');
+    const token = localStorage.getItem('LampToken');
     const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem('cart')) || []);
 
     const deleteGame = (index) => {
@@ -53,7 +53,7 @@ const Cart = () => {
     const gameIds = cart.map(games => games.gameId);
     const gameName = cart.map(games => games.gameName);
     const GameNumbers = cart.map(games => games.GameNumbers);
-    console.log("Items-Which-Prensent",cart)
+    // console.log("Items-Which-Prensent",cart)
 
 
     return (

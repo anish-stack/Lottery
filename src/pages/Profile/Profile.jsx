@@ -3,9 +3,10 @@ import profilePic from './qwe.jpg';
 import WithdrawlRequest from './WithdrawlRequest';
 import PurchaseGamesMe from './PurchaseGamesMe';
 import WinningAmountByGame from './WinningAmountByGame';
+import MyWithdrawlRequest from './MyWithdrawlRequest';
 
 const Profile = () => {
-    const user = JSON.parse(sessionStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem('LampUser'));
     const [activeTab, setActiveTab] = useState('purchase');
 
     return (
@@ -54,7 +55,7 @@ const Profile = () => {
                             {activeTab === 'purchase' && <div>{<PurchaseGamesMe/>}</div>}
                             {activeTab === 'withdrawal-request' && <div><WithdrawlRequest /></div>}
                             {activeTab === 'winning-amount' && <div><WinningAmountByGame/></div>}
-                            {activeTab === 'pending-amount' && <div>Pending Amount content goes here.</div>}
+                            {activeTab === 'pending-amount' && <div><MyWithdrawlRequest/></div>}
                         </div>
                     </div>
                 </div>

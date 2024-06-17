@@ -6,7 +6,7 @@ const Header = () => {
     const [showDrop, setShowDrop] = useState(false)
     const [showDrops, setShowDrops] = useState(false)
     const [showmenu, setShowmenu] = useState(false)
-    const token = sessionStorage.getItem('token')
+    const token = localStorage.getItem('LampToken')
 
     const showDropMenu = () => {
         setShowDrop(!showDrop)
